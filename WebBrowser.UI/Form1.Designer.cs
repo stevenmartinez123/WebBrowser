@@ -29,6 +29,7 @@ namespace WebBrowser.UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +42,16 @@ namespace WebBrowser.UI
             this.manageHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageBookmarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripBackButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripForwardButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripRefreshButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripHomeButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripGoButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBookMarkButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -54,7 +64,7 @@ namespace WebBrowser.UI
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1244, 61);
+            this.menuStrip1.Size = new System.Drawing.Size(1460, 56);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,7 +77,7 @@ namespace WebBrowser.UI
             this.printPageToolStripMenuItem,
             this.exitWebBrowserToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(121, 57);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(121, 68);
             this.fileToolStripMenuItem.Text = "&File: ";
             // 
             // toolsToolStripMenuItem
@@ -76,7 +86,7 @@ namespace WebBrowser.UI
             this.manageHistoryToolStripMenuItem,
             this.manageBookmarksToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(129, 57);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(129, 68);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // helpToolStripMenuItem
@@ -84,7 +94,7 @@ namespace WebBrowser.UI
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(131, 57);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(131, 68);
             this.helpToolStripMenuItem.Text = "&Help:";
             // 
             // newTabToolStripMenuItem
@@ -137,17 +147,99 @@ namespace WebBrowser.UI
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripBackButton,
+            this.toolStripForwardButton,
+            this.toolStripRefreshButton,
+            this.toolStripHomeButton,
+            this.toolStripBookMarkButton,
+            this.toolStripGoButton,
+            this.toolStripTextBox1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 56);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1460, 75);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripBackButton
+            // 
+            this.toolStripBackButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBackButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBackButton.Image")));
+            this.toolStripBackButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBackButton.Name = "toolStripBackButton";
+            this.toolStripBackButton.Size = new System.Drawing.Size(69, 66);
+            this.toolStripBackButton.Text = "Back";
+            // 
+            // toolStripForwardButton
+            // 
+            this.toolStripForwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripForwardButton.Image")));
+            this.toolStripForwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripForwardButton.Name = "toolStripForwardButton";
+            this.toolStripForwardButton.Size = new System.Drawing.Size(69, 72);
+            this.toolStripForwardButton.Text = "Forward";
+            // 
+            // toolStripRefreshButton
+            // 
+            this.toolStripRefreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripRefreshButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRefreshButton.Image")));
+            this.toolStripRefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripRefreshButton.Name = "toolStripRefreshButton";
+            this.toolStripRefreshButton.Size = new System.Drawing.Size(69, 72);
+            this.toolStripRefreshButton.Text = "Refresh";
+            // 
+            // toolStripHomeButton
+            // 
+            this.toolStripHomeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripHomeButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripHomeButton.Image")));
+            this.toolStripHomeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripHomeButton.Name = "toolStripHomeButton";
+            this.toolStripHomeButton.Size = new System.Drawing.Size(69, 72);
+            this.toolStripHomeButton.Text = "Home";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(700, 75);
+            // 
+            // toolStripGoButton
+            // 
+            this.toolStripGoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripGoButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripGoButton.Image")));
+            this.toolStripGoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripGoButton.Name = "toolStripGoButton";
+            this.toolStripGoButton.Size = new System.Drawing.Size(69, 72);
+            this.toolStripGoButton.Text = "Go";
+            // 
+            // toolStripBookMarkButton
+            // 
+            this.toolStripBookMarkButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBookMarkButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBookMarkButton.Image")));
+            this.toolStripBookMarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBookMarkButton.Name = "toolStripBookMarkButton";
+            this.toolStripBookMarkButton.Size = new System.Drawing.Size(69, 72);
+            this.toolStripBookMarkButton.Text = "Bookmark";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1244, 703);
+            this.ClientSize = new System.Drawing.Size(1460, 705);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +259,14 @@ namespace WebBrowser.UI
         private System.Windows.Forms.ToolStripMenuItem manageBookmarksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripBackButton;
+        private System.Windows.Forms.ToolStripButton toolStripForwardButton;
+        private System.Windows.Forms.ToolStripButton toolStripRefreshButton;
+        private System.Windows.Forms.ToolStripButton toolStripHomeButton;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripButton toolStripGoButton;
+        private System.Windows.Forms.ToolStripButton toolStripBookMarkButton;
     }
 }
 
