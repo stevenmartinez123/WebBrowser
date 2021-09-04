@@ -214,7 +214,7 @@ namespace WebBrowser.UI
             this.toolStripGoButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripGoButton.Image")));
             this.toolStripGoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripGoButton.Name = "toolStripGoButton";
-            this.toolStripGoButton.Size = new System.Drawing.Size(69, 72);
+            this.toolStripGoButton.Size = new System.Drawing.Size(69, 66);
             this.toolStripGoButton.Text = "Go";
             // 
             // toolStripBookMarkButton
