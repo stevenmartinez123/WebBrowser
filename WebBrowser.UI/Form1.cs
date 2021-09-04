@@ -27,5 +27,19 @@ namespace WebBrowser.UI
             MessageBox.Show("Browser Project: By Steven Martinez ID: 904170238");
 
         }
+
+        private void AddressBarTextBox_Click(object sender, EventArgs e)
+        {
+       
+            webBrowser1.Navigate(AddressBarTextBox.Text.ToString()); 
+        }
+
+        private void AddressBarTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                webBrowser1.Navigate(AddressBarTextBox.Text.ToString());
+            }
+        }
     }
 }
