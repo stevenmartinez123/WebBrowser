@@ -55,7 +55,7 @@ namespace WebBrowser.UI
             this.AddressBarTextBox});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1197, 75);
+            this.toolStrip1.Size = new System.Drawing.Size(1197, 61);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -65,7 +65,7 @@ namespace WebBrowser.UI
             this.toolStripBackButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBackButton.Image")));
             this.toolStripBackButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBackButton.Name = "toolStripBackButton";
-            this.toolStripBackButton.Size = new System.Drawing.Size(69, 66);
+            this.toolStripBackButton.Size = new System.Drawing.Size(69, 52);
             this.toolStripBackButton.Text = "Back";
             // 
             // toolStripForwardButton
@@ -112,6 +112,7 @@ namespace WebBrowser.UI
             this.toolStripGoButton.Name = "toolStripGoButton";
             this.toolStripGoButton.Size = new System.Drawing.Size(69, 52);
             this.toolStripGoButton.Text = "Go";
+            this.toolStripGoButton.Click += new System.EventHandler(this.toolStripGoButton_Click);
             // 
             // AddressBarTextBox
             // 
@@ -121,16 +122,19 @@ namespace WebBrowser.UI
             this.AddressBarTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddressBarTextBox.Name = "AddressBarTextBox";
             this.AddressBarTextBox.Size = new System.Drawing.Size(400, 55);
+            this.AddressBarTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressBarTextBox_KeyDown);
+            this.AddressBarTextBox.Click += new System.EventHandler(this.AddressBarTextBox_Click);
             // 
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 75);
+            this.webBrowser1.Location = new System.Drawing.Point(0, 61);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(1197, 798);
+            this.webBrowser1.Size = new System.Drawing.Size(1197, 812);
             this.webBrowser1.TabIndex = 3;
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // UserControlTabs
             // 

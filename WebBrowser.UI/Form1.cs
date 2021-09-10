@@ -31,15 +31,17 @@ namespace WebBrowser.UI
         private void AddressBarTextBox_Click(object sender, EventArgs e)
         {
        
-            webBrowser1.Navigate(AddressBarTextBox.Text.ToString()); 
+            
         }
 
         private void AddressBarTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                webBrowser1.Navigate(AddressBarTextBox.Text.ToString());
-            }
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
