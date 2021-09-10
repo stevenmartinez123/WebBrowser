@@ -39,6 +39,10 @@ namespace WebBrowser.UI
         {
             webBrowser1.Navigate(AddressBarTextBox.Text.ToString());
         }
-    
+
+        private void toolStripRefreshButton_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Refresh(); 
+        }
     }
 }

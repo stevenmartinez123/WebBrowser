@@ -85,6 +85,7 @@ namespace WebBrowser.UI
             this.toolStripRefreshButton.Name = "toolStripRefreshButton";
             this.toolStripRefreshButton.Size = new System.Drawing.Size(69, 52);
             this.toolStripRefreshButton.Text = "Refresh";
+            this.toolStripRefreshButton.Click += new System.EventHandler(this.toolStripRefreshButton_Click);
             // 
             // toolStripHomeButton
             // 
