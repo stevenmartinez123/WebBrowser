@@ -36,12 +36,18 @@ namespace WebBrowser.UI
 
         private void AddressBarTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            UserControlTabs tb = new UserControlTabs();
+
+          
 
             if (e.Control && e.KeyCode == Keys.T)
             {
-                this.tabControl1.TabPages.Add(new TabPage("New Tab"));
+                TabPage myTab = new TabPage("New Tab");
+                tabControl1.TabPages.Add(myTab);
+                UserControlTabs newTab = new UserControlTabs(myTab);
+                newTab.Dock = DockStyle.Fill;
+                myTab.Controls.Add(new UserControlTabs(myTab));
                 
+
             }
 
             if (e.Control && e.KeyCode == Keys.W)
@@ -57,7 +63,12 @@ namespace WebBrowser.UI
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.tabControl1.TabPages.Add(new TabPage("New Tab"));
+            TabPage myTab = new TabPage("New Tab");
+            tabControl1.TabPages.Add(myTab);
+            UserControlTabs newTab = new UserControlTabs(myTab);
+            newTab.Dock = DockStyle.Fill;
+            myTab.Controls.Add(new UserControlTabs(myTab));
+
         }
 
         private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)

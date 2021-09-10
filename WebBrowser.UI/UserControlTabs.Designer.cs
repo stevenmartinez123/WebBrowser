@@ -163,6 +163,6 @@ namespace WebBrowser.UI
         private System.Windows.Forms.ToolStripButton toolStripBookMarkButton;
         private System.Windows.Forms.ToolStripButton toolStripGoButton;
         private System.Windows.Forms.ToolStripTextBox AddressBarTextBox;
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        public System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
