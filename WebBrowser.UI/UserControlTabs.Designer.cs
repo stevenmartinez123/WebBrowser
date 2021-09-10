@@ -67,6 +67,7 @@ namespace WebBrowser.UI
             this.toolStripBackButton.Name = "toolStripBackButton";
             this.toolStripBackButton.Size = new System.Drawing.Size(69, 52);
             this.toolStripBackButton.Text = "Back";
+            this.toolStripBackButton.Click += new System.EventHandler(this.toolStripBackButton_Click);
             // 
             // toolStripForwardButton
             // 
@@ -76,6 +77,7 @@ namespace WebBrowser.UI
             this.toolStripForwardButton.Name = "toolStripForwardButton";
             this.toolStripForwardButton.Size = new System.Drawing.Size(69, 52);
             this.toolStripForwardButton.Text = "Forward";
+            this.toolStripForwardButton.Click += new System.EventHandler(this.toolStripForwardButton_Click);
             // 
             // toolStripRefreshButton
             // 
