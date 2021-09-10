@@ -44,6 +44,7 @@ namespace WebBrowser.UI
             if (e.KeyCode == Keys.Enter)
             {
                 webBrowser1.Navigate(AddressBarTextBox.Text.ToString());
+                e.SuppressKeyPress = true;
  
             }
         }
