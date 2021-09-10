@@ -52,7 +52,7 @@ namespace WebBrowser.UI
             this.AddressBarTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.userControlTabs1 = new WebBrowser.UI.UserControlTabs();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -247,7 +247,7 @@ namespace WebBrowser.UI
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.webBrowser1);
+            this.tabPage1.Controls.Add(this.userControlTabs1);
             this.tabPage1.Location = new System.Drawing.Point(12, 58);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -256,15 +256,12 @@ namespace WebBrowser.UI
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // webBrowser1
+            // userControlTabs1
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(1723, 548);
-            this.webBrowser1.TabIndex = 0;
+            this.userControlTabs1.Location = new System.Drawing.Point(117, 0);
+            this.userControlTabs1.Name = "userControlTabs1";
+            this.userControlTabs1.Size = new System.Drawing.Size(1197, 873);
+            this.userControlTabs1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -312,7 +309,7 @@ namespace WebBrowser.UI
         private System.Windows.Forms.ToolStripButton toolStripBookMarkButton;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private UserControlTabs userControlTabs1;
     }
 }
 
