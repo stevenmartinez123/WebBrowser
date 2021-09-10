@@ -72,37 +72,37 @@ namespace WebBrowser.UI
             this.printPageToolStripMenuItem,
             this.exitWebBrowserToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(121, 68);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(121, 52);
             this.fileToolStripMenuItem.Text = "&File: ";
             // 
             // newTabToolStripMenuItem
             // 
             this.newTabToolStripMenuItem.Name = "newTabToolStripMenuItem";
-            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(533, 66);
+            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(538, 66);
             this.newTabToolStripMenuItem.Text = "New Tab:";
             // 
             // closeCurrentTabToolStripMenuItem
             // 
             this.closeCurrentTabToolStripMenuItem.Name = "closeCurrentTabToolStripMenuItem";
-            this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(533, 66);
+            this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(538, 66);
             this.closeCurrentTabToolStripMenuItem.Text = "Close Current Tab:";
             // 
             // savePageAsHTMLToolStripMenuItem
             // 
             this.savePageAsHTMLToolStripMenuItem.Name = "savePageAsHTMLToolStripMenuItem";
-            this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(533, 66);
+            this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(538, 66);
             this.savePageAsHTMLToolStripMenuItem.Text = "Save Page as HTML:";
             // 
             // printPageToolStripMenuItem
             // 
             this.printPageToolStripMenuItem.Name = "printPageToolStripMenuItem";
-            this.printPageToolStripMenuItem.Size = new System.Drawing.Size(533, 66);
+            this.printPageToolStripMenuItem.Size = new System.Drawing.Size(538, 66);
             this.printPageToolStripMenuItem.Text = "Print Page:";
             // 
             // exitWebBrowserToolStripMenuItem
             // 
             this.exitWebBrowserToolStripMenuItem.Name = "exitWebBrowserToolStripMenuItem";
-            this.exitWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(533, 66);
+            this.exitWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(538, 66);
             this.exitWebBrowserToolStripMenuItem.Text = "Exit Web Browser: ";
             this.exitWebBrowserToolStripMenuItem.Click += new System.EventHandler(this.exitWebBrowserToolStripMenuItem_Click);
             // 
@@ -112,7 +112,7 @@ namespace WebBrowser.UI
             this.manageHistoryToolStripMenuItem,
             this.manageBookmarksToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(129, 68);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(129, 52);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // manageHistoryToolStripMenuItem
@@ -132,7 +132,7 @@ namespace WebBrowser.UI
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(131, 68);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(131, 52);
             this.helpToolStripMenuItem.Text = "&Help:";
             // 
             // aboutToolStripMenuItem
@@ -151,6 +151,7 @@ namespace WebBrowser.UI
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1753, 685);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressBarTextBox_KeyDown);
             // 
             // tabPage1
             // 
