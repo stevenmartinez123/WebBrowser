@@ -64,7 +64,7 @@ namespace WebBrowser.UI
             string url = AddressBarTextBox.Text;
             try
             {
-                webBrowser1.Navigate(new Uri(url));
+                webBrowser1.Navigate(url);
             }
             catch
             {
