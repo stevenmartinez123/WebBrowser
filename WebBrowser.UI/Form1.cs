@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -74,6 +75,18 @@ namespace WebBrowser.UI
         private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.tabControl1.TabPages.RemoveAt(this.tabControl1.SelectedIndex);
+        }
+
+        private void manageHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var historyManager = new HistoryManagerForm();
+            historyManager.ShowDialog();
+        }
+
+        private void manageBookmarksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var bookmarkManager = new BookmarkManagerForm();
+            bookmarkManager = new BookmarkManagerForm();
         }
     }
 }
