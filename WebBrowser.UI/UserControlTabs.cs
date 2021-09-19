@@ -32,7 +32,15 @@ namespace WebBrowser.UI
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+            string previousURL = AddressBarTextBox.Text;
+            string currentURL = AddressBarTextBox.Text = webBrowser1.Url.ToString(); 
 
+            if (!previousURL.Equals(currentURL))
+            {
+                var newHistoryItem = new HistoryItem(webBrowser1.Url.ToString(), webBrowser1.DocumentTitle, DateTime.Now);
+                HistoryManager.AddHistoryItem(newHistoryItem);
+                tab.Text = webBrowser1.Document.Title; 
+            }
         }
 
         private void AddressBarTextBox_Click(object sender, EventArgs e)
@@ -52,8 +60,18 @@ namespace WebBrowser.UI
 
         private void toolStripGoButton_Click(object sender, EventArgs e)
         {
-            webBrowser1.Navigate(AddressBarTextBox.Text.ToString());
-         
+
+            string url = AddressBarTextBox.Text;
+            try
+            {
+                webBrowser1.Navigate(new Uri(url));
+            }
+            catch
+            {
+                webBrowser1.Navigate(new Uri("http://" + url));
+                AddressBarTextBox.Text = "http://" + url;
+            }
+
         }
 
         private void toolStripRefreshButton_Click(object sender, EventArgs e)
@@ -75,16 +93,30 @@ namespace WebBrowser.UI
 
         private void toolStripBookMarkButton_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 var newBookmark = new BookmarkItem();
                 newBookmark.URL = webBrowser1.Url.ToString();
                 newBookmark.Title = webBrowser1.DocumentTitle;
-                BookmarkManager.AddBookmarkItem(newBookmark);
-            } catch
+
+            if (!containsBookmark(newBookmark.URL))
             {
-                MessageBox.Show("Bookmark already exists");
+                BookmarkManager.AddBookmarkItem(newBookmark);
             }
         }
+
+        private bool containsBookmark(string url)
+        {
+            var list = BookmarkManager.GetBookmarkItems(); 
+
+            foreach (var item in list)
+            {
+                if (item.URL.Equals(url))
+                {
+                    MessageBox.Show("Bookmark already exists");
+                    return true; 
+                } 
+            } return false; 
+        }
+
     }
 }

@@ -86,7 +86,7 @@ namespace WebBrowser.UI
         private void manageBookmarksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var bookmarkManager = new BookmarkManagerForm();
-            bookmarkManager = new BookmarkManagerForm();
+            bookmarkManager.ShowDialog(); 
         }
     }
 }
