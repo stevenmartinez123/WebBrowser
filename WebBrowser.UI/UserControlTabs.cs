@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -70,6 +71,20 @@ namespace WebBrowser.UI
         {
 
             webBrowser1.GoForward();
+        }
+
+        private void toolStripBookMarkButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var newBookmark = new BookmarkItem();
+                newBookmark.URL = webBrowser1.Url.ToString();
+                newBookmark.Title = webBrowser1.DocumentTitle;
+                BookmarkManager.AddBookmarkItem(newBookmark);
+            } catch
+            {
+                MessageBox.Show("Bookmark already exists");
+            }
         }
     }
 }

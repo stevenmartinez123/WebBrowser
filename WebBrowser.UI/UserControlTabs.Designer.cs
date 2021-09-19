@@ -106,6 +106,7 @@ namespace WebBrowser.UI
             this.toolStripBookMarkButton.Name = "toolStripBookMarkButton";
             this.toolStripBookMarkButton.Size = new System.Drawing.Size(69, 52);
             this.toolStripBookMarkButton.Text = "Bookmark";
+            this.toolStripBookMarkButton.Click += new System.EventHandler(this.toolStripBookMarkButton_Click);
             // 
             // toolStripGoButton
             // 
