@@ -93,14 +93,19 @@ namespace WebBrowser.UI
 
         private void toolStripBookMarkButton_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
                 var newBookmark = new BookmarkItem();
                 newBookmark.URL = webBrowser1.Url.ToString();
                 newBookmark.Title = webBrowser1.DocumentTitle;
 
-            if (!containsBookmark(newBookmark.URL))
+                if (!containsBookmark(newBookmark.URL))
+                {
+                    BookmarkManager.AddBookmarkItem(newBookmark);
+                }
+            } catch
             {
-                BookmarkManager.AddBookmarkItem(newBookmark);
+                MessageBox.Show("Please enter correct web address.");
             }
         }
 
