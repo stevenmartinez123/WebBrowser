@@ -158,5 +158,16 @@ namespace WebBrowser.UI
         {
 
         }
+
+        private void toolStripStatusLabel1_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ProgressBar_MouseHover(object sender, EventArgs e)
+        {
+            
+            toolStripStatusLabel1.Text = AddressBarTextBox.Text; 
+        }
     }
 }

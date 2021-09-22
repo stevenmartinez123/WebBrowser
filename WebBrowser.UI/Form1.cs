@@ -88,5 +88,15 @@ namespace WebBrowser.UI
             var bookmarkManager = new BookmarkManagerForm();
             bookmarkManager.ShowDialog(); 
         }
+
+        private void userControlTabs1_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void userControlTabs1_MouseHover(object sender, EventArgs e)
+        {
+
+        }
     }
 }

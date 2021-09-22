@@ -42,6 +42,7 @@ namespace WebBrowser.UI
             this.statusStripUserControlTab = new System.Windows.Forms.StatusStrip();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusProgressLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
             this.statusStripUserControlTab.SuspendLayout();
             this.SuspendLayout();
@@ -151,7 +152,8 @@ namespace WebBrowser.UI
             this.statusStripUserControlTab.ImageScalingSize = new System.Drawing.Size(48, 48);
             this.statusStripUserControlTab.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ProgressBar,
-            this.toolStripStatusProgressLabel});
+            this.toolStripStatusProgressLabel,
+            this.toolStripStatusLabel1});
             this.statusStripUserControlTab.Location = new System.Drawing.Point(0, 810);
             this.statusStripUserControlTab.Name = "statusStripUserControlTab";
             this.statusStripUserControlTab.Size = new System.Drawing.Size(1197, 63);
@@ -163,11 +165,18 @@ namespace WebBrowser.UI
             this.ProgressBar.Name = "ProgressBar";
             this.ProgressBar.Size = new System.Drawing.Size(300, 45);
             this.ProgressBar.Click += new System.EventHandler(this.ProgressBar_Click);
+            this.ProgressBar.MouseHover += new System.EventHandler(this.ProgressBar_MouseHover);
             // 
             // toolStripStatusProgressLabel
             // 
             this.toolStripStatusProgressLabel.Name = "toolStripStatusProgressLabel";
             this.toolStripStatusProgressLabel.Size = new System.Drawing.Size(0, 48);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 48);
+            this.toolStripStatusLabel1.MouseHover += new System.EventHandler(this.toolStripStatusLabel1_MouseHover);
             // 
             // UserControlTabs
             // 
@@ -200,5 +209,6 @@ namespace WebBrowser.UI
         private System.Windows.Forms.StatusStrip statusStripUserControlTab;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusProgressLabel;
         public System.Windows.Forms.ToolStripProgressBar ProgressBar;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
