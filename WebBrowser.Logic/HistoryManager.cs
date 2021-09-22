@@ -11,10 +11,10 @@ namespace WebBrowser.Logic
     public class HistoryManager
     {
 
-        public static void AddHistoryItem(HistoryItem item)
+        public static void AddHistoryItem(string url, string title)
         {
             var adapter = new HistoryTableAdapter();
-            adapter.Insert(item.URL, item.Title, item.Date);
+            adapter.Insert(url, title, DateTime.Now);
         }
 
         public static List<HistoryItem> GetHistoryItems()
@@ -23,10 +23,13 @@ namespace WebBrowser.Logic
             var results = new List<HistoryItem>();
             var rows = adapter.GetData();
 
-                foreach (var row in rows)
-                {
-                    var item = new HistoryItem(row.URL, row.Title, row.Date);
-                    results.Add(item);
+            foreach (var row in rows)
+            {
+                var item = new HistoryItem();
+                item.URL = row.URL;
+                item.Title = row.Title;
+                item.Date = row.Date;
+                results.Add(item);
             }
             return results;
         } 

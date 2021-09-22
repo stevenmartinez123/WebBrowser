@@ -32,15 +32,7 @@ namespace WebBrowser.UI
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            string previousURL = AddressBarTextBox.Text;
-            string currentURL = AddressBarTextBox.Text = webBrowser1.Url.ToString(); 
-
-            if (!previousURL.Equals(currentURL))
-            {
-                var newHistoryItem = new HistoryItem(webBrowser1.Url.ToString(), webBrowser1.DocumentTitle, DateTime.Now);
-                HistoryManager.AddHistoryItem(newHistoryItem);
-                tab.Text = webBrowser1.Document.Title; 
-            }
+      
         }
 
         private void AddressBarTextBox_Click(object sender, EventArgs e)
@@ -54,23 +46,35 @@ namespace WebBrowser.UI
             {
                 webBrowser1.Navigate(AddressBarTextBox.Text.ToString());
                 e.SuppressKeyPress = true;
- 
+                webBrowser1.ScriptErrorsSuppressed = true;
+                string title = WebTitle(AddressBarTextBox.Text.ToString());
+                HistoryManager.AddHistoryItem(AddressBarTextBox.Text, title);
+                
             }
+        }
+
+        private string WebTitle(string url)
+        {
+            string[] titleSplit = url.ToString().Split('.');
+            string title = "";
+
+            if (titleSplit[0].ToLower().Equals("www"))
+            {
+                title = titleSplit[1];
+            }
+            else
+            {
+                title = titleSplit[0];
+            }
+            return title;
         }
 
         private void toolStripGoButton_Click(object sender, EventArgs e)
         {
 
-            string url = AddressBarTextBox.Text;
-            try
-            {
-                webBrowser1.Navigate(url);
-            }
-            catch
-            {
-                webBrowser1.Navigate(new Uri("http://" + url));
-                AddressBarTextBox.Text = "http://" + url;
-            }
+            webBrowser1.Navigate(AddressBarTextBox.Text);
+            string title = WebTitle(AddressBarTextBox.Text);
+            HistoryManager.AddHistoryItem(AddressBarTextBox.Text, title);
 
         }
 
@@ -96,8 +100,8 @@ namespace WebBrowser.UI
             try
             {
                 var newBookmark = new BookmarkItem();
-                newBookmark.URL = webBrowser1.Url.ToString();
-                newBookmark.Title = webBrowser1.DocumentTitle;
+                newBookmark.URL = AddressBarTextBox.Text;
+                newBookmark.Title = WebTitle(AddressBarTextBox.Text);
 
                 if (!containsBookmark(newBookmark.URL))
                 {
@@ -123,5 +127,36 @@ namespace WebBrowser.UI
             } return false; 
         }
 
+        private void ProgressBar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void webBrowser1_ProgressChanged_1(object sender, WebBrowserProgressChangedEventArgs e)
+        {
+            var maxP = (int)e.MaximumProgress;
+            var curr = (int)e.CurrentProgress;
+            ProgressBar.Maximum = maxP;
+            ProgressBar.Minimum = 0;
+
+            if (curr > 0 && curr <= maxP)
+            {
+                ProgressBar.Value = curr;
+                toolStripStatusProgressLabel.Text = "loading";
+
+            }
+
+            if (e.CurrentProgress == maxP || e.CurrentProgress == 0)
+            {
+                toolStripStatusProgressLabel.Text = "Done";
+            }
+
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

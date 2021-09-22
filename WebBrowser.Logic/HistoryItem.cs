@@ -12,13 +12,15 @@ namespace WebBrowser.Logic
         public string Title { get; set; }
         public DateTime Date { get; set; }
 
-        public HistoryItem(string URLin, string TitleIn, DateTime dateIn)
+        public HistoryItem(string URLin, string TitleIn, DateTime dtIn)
         {
             this.URL = URLin;
             this.Title = TitleIn;
-            this.Date = dateIn;
-
+            this.Date = dtIn;
         }
+
+        public HistoryItem() { }
+
 
     }
 }
