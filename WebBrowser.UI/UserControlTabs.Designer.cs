@@ -39,8 +39,10 @@ namespace WebBrowser.UI
             this.toolStripGoButton = new System.Windows.Forms.ToolStripButton();
             this.AddressBarTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusStripUserControlTab = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStrip1.SuspendLayout();
+            this.statusStripUserControlTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -56,7 +58,7 @@ namespace WebBrowser.UI
             this.AddressBarTextBox});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1197, 61);
+            this.toolStrip1.Size = new System.Drawing.Size(1197, 75);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -66,7 +68,7 @@ namespace WebBrowser.UI
             this.toolStripBackButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBackButton.Image")));
             this.toolStripBackButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBackButton.Name = "toolStripBackButton";
-            this.toolStripBackButton.Size = new System.Drawing.Size(69, 52);
+            this.toolStripBackButton.Size = new System.Drawing.Size(69, 66);
             this.toolStripBackButton.Text = "Back";
             this.toolStripBackButton.Click += new System.EventHandler(this.toolStripBackButton_Click);
             // 
@@ -76,7 +78,7 @@ namespace WebBrowser.UI
             this.toolStripForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripForwardButton.Image")));
             this.toolStripForwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripForwardButton.Name = "toolStripForwardButton";
-            this.toolStripForwardButton.Size = new System.Drawing.Size(69, 52);
+            this.toolStripForwardButton.Size = new System.Drawing.Size(69, 66);
             this.toolStripForwardButton.Text = "Forward";
             this.toolStripForwardButton.Click += new System.EventHandler(this.toolStripForwardButton_Click);
             // 
@@ -86,7 +88,7 @@ namespace WebBrowser.UI
             this.toolStripRefreshButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRefreshButton.Image")));
             this.toolStripRefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRefreshButton.Name = "toolStripRefreshButton";
-            this.toolStripRefreshButton.Size = new System.Drawing.Size(69, 52);
+            this.toolStripRefreshButton.Size = new System.Drawing.Size(69, 66);
             this.toolStripRefreshButton.Text = "Refresh";
             this.toolStripRefreshButton.Click += new System.EventHandler(this.toolStripRefreshButton_Click);
             // 
@@ -96,7 +98,7 @@ namespace WebBrowser.UI
             this.toolStripHomeButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripHomeButton.Image")));
             this.toolStripHomeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripHomeButton.Name = "toolStripHomeButton";
-            this.toolStripHomeButton.Size = new System.Drawing.Size(69, 52);
+            this.toolStripHomeButton.Size = new System.Drawing.Size(69, 66);
             this.toolStripHomeButton.Text = "Home";
             // 
             // toolStripBookMarkButton
@@ -105,7 +107,7 @@ namespace WebBrowser.UI
             this.toolStripBookMarkButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBookMarkButton.Image")));
             this.toolStripBookMarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBookMarkButton.Name = "toolStripBookMarkButton";
-            this.toolStripBookMarkButton.Size = new System.Drawing.Size(69, 52);
+            this.toolStripBookMarkButton.Size = new System.Drawing.Size(69, 66);
             this.toolStripBookMarkButton.Text = "Bookmark";
             this.toolStripBookMarkButton.Click += new System.EventHandler(this.toolStripBookMarkButton_Click);
             // 
@@ -115,7 +117,7 @@ namespace WebBrowser.UI
             this.toolStripGoButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripGoButton.Image")));
             this.toolStripGoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripGoButton.Name = "toolStripGoButton";
-            this.toolStripGoButton.Size = new System.Drawing.Size(69, 52);
+            this.toolStripGoButton.Size = new System.Drawing.Size(69, 66);
             this.toolStripGoButton.Text = "Go";
             this.toolStripGoButton.Click += new System.EventHandler(this.toolStripGoButton_Click);
             // 
@@ -133,34 +135,43 @@ namespace WebBrowser.UI
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 61);
+            this.webBrowser1.Location = new System.Drawing.Point(0, 75);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(1197, 812);
+            this.webBrowser1.Size = new System.Drawing.Size(1197, 798);
             this.webBrowser1.TabIndex = 3;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
-            // statusStrip1
+            // statusStripUserControlTab
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(48, 48);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 816);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1197, 57);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStripUserControlTab.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.statusStripUserControlTab.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1});
+            this.statusStripUserControlTab.Location = new System.Drawing.Point(0, 815);
+            this.statusStripUserControlTab.Name = "statusStripUserControlTab";
+            this.statusStripUserControlTab.Size = new System.Drawing.Size(1197, 58);
+            this.statusStripUserControlTab.TabIndex = 4;
+            this.statusStripUserControlTab.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(200, 40);
             // 
             // UserControlTabs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.statusStripUserControlTab);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "UserControlTabs";
             this.Size = new System.Drawing.Size(1197, 873);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStripUserControlTab.ResumeLayout(false);
+            this.statusStripUserControlTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,6 +187,7 @@ namespace WebBrowser.UI
         private System.Windows.Forms.ToolStripButton toolStripGoButton;
         private System.Windows.Forms.ToolStripTextBox AddressBarTextBox;
         public System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStripUserControlTab;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }
