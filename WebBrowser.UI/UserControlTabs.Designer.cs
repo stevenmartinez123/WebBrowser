@@ -39,6 +39,7 @@ namespace WebBrowser.UI
             this.toolStripGoButton = new System.Windows.Forms.ToolStripButton();
             this.AddressBarTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,10 +141,20 @@ namespace WebBrowser.UI
             this.webBrowser1.TabIndex = 3;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 816);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1197, 57);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // UserControlTabs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "UserControlTabs";
@@ -165,5 +176,6 @@ namespace WebBrowser.UI
         private System.Windows.Forms.ToolStripButton toolStripGoButton;
         private System.Windows.Forms.ToolStripTextBox AddressBarTextBox;
         public System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
