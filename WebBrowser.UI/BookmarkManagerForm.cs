@@ -45,6 +45,9 @@ namespace WebBrowser.UI
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            string bookmark = listBoxBookmarkManager.GetItemText(listBoxBookmarkManager.SelectedItem);
+            BookmarkManager.DeleteBookmark(bookmark);
+            listBoxBookmarkManager.Items.RemoveAt(listBoxBookmarkManager.SelectedIndex);
 
         }
     }

@@ -40,14 +40,14 @@ namespace WebBrowser.UI
             this.listBoxBookmarkManager.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBoxBookmarkManager.FormattingEnabled = true;
             this.listBoxBookmarkManager.ItemHeight = 37;
-            this.listBoxBookmarkManager.Location = new System.Drawing.Point(0, 269);
+            this.listBoxBookmarkManager.Location = new System.Drawing.Point(0, 235);
             this.listBoxBookmarkManager.Name = "listBoxBookmarkManager";
-            this.listBoxBookmarkManager.Size = new System.Drawing.Size(1343, 596);
+            this.listBoxBookmarkManager.Size = new System.Drawing.Size(1329, 559);
             this.listBoxBookmarkManager.TabIndex = 0;
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.Location = new System.Drawing.Point(358, 101);
+            this.SearchTextBox.Location = new System.Drawing.Point(348, 56);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(370, 44);
             this.SearchTextBox.TabIndex = 1;
@@ -55,7 +55,7 @@ namespace WebBrowser.UI
             // SearchButton
             // 
             this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.Location = new System.Drawing.Point(42, 75);
+            this.SearchButton.Location = new System.Drawing.Point(40, 30);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(209, 88);
             this.SearchButton.TabIndex = 2;
@@ -66,7 +66,7 @@ namespace WebBrowser.UI
             // DeleteButton
             // 
             this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.Location = new System.Drawing.Point(849, 75);
+            this.DeleteButton.Location = new System.Drawing.Point(856, 30);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(209, 88);
             this.DeleteButton.TabIndex = 3;
@@ -78,7 +78,7 @@ namespace WebBrowser.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1343, 865);
+            this.ClientSize = new System.Drawing.Size(1329, 794);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchTextBox);
