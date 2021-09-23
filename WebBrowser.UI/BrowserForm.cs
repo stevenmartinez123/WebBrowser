@@ -23,6 +23,7 @@ namespace WebBrowser.UI
             Application.Exit(); 
         }
 
+
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Browser Project: By Steven Martinez ID: 904170238");
@@ -59,7 +60,8 @@ namespace WebBrowser.UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+       
+           
         }
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +104,22 @@ namespace WebBrowser.UI
         private void clearHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HistoryManager.DeleteHistory();
+        }
+
+        private void tabControl1_MouseDown(object sender, MouseEventArgs e)
+        {
+          
+
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+           
+        }
+
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+         
         }
     }
 }
