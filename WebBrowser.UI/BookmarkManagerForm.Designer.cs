@@ -32,6 +32,7 @@ namespace WebBrowser.UI
             this.listBoxBookmarkManager = new System.Windows.Forms.ListBox();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxBookmarkManager
@@ -39,14 +40,14 @@ namespace WebBrowser.UI
             this.listBoxBookmarkManager.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBoxBookmarkManager.FormattingEnabled = true;
             this.listBoxBookmarkManager.ItemHeight = 37;
-            this.listBoxBookmarkManager.Location = new System.Drawing.Point(0, 236);
+            this.listBoxBookmarkManager.Location = new System.Drawing.Point(0, 269);
             this.listBoxBookmarkManager.Name = "listBoxBookmarkManager";
-            this.listBoxBookmarkManager.Size = new System.Drawing.Size(1380, 596);
+            this.listBoxBookmarkManager.Size = new System.Drawing.Size(1343, 596);
             this.listBoxBookmarkManager.TabIndex = 0;
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.Location = new System.Drawing.Point(343, 75);
+            this.SearchTextBox.Location = new System.Drawing.Point(358, 101);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(370, 44);
             this.SearchTextBox.TabIndex = 1;
@@ -54,7 +55,7 @@ namespace WebBrowser.UI
             // SearchButton
             // 
             this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.Location = new System.Drawing.Point(52, 49);
+            this.SearchButton.Location = new System.Drawing.Point(42, 75);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(209, 88);
             this.SearchButton.TabIndex = 2;
@@ -62,11 +63,23 @@ namespace WebBrowser.UI
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.Location = new System.Drawing.Point(859, 75);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(209, 88);
+            this.DeleteButton.TabIndex = 3;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
             // BookmarkManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1380, 832);
+            this.ClientSize = new System.Drawing.Size(1343, 865);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.listBoxBookmarkManager);
@@ -83,5 +96,6 @@ namespace WebBrowser.UI
         private System.Windows.Forms.ListBox listBoxBookmarkManager;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }
