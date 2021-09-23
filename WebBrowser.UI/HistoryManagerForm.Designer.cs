@@ -46,7 +46,7 @@ namespace WebBrowser.UI
             // 
             // searchTermTextBox
             // 
-            this.searchTermTextBox.Location = new System.Drawing.Point(386, 165);
+            this.searchTermTextBox.Location = new System.Drawing.Point(372, 116);
             this.searchTermTextBox.Name = "searchTermTextBox";
             this.searchTermTextBox.Size = new System.Drawing.Size(369, 44);
             this.searchTermTextBox.TabIndex = 1;
@@ -54,7 +54,7 @@ namespace WebBrowser.UI
             // buttonSearch
             // 
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.Location = new System.Drawing.Point(114, 141);
+            this.buttonSearch.Location = new System.Drawing.Point(73, 92);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(197, 84);
             this.buttonSearch.TabIndex = 2;
