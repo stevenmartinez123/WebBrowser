@@ -55,6 +55,8 @@ namespace WebBrowser.UI
             if (listBoxHistory.SelectedIndex >= 0)
             {
                 string selectedHistory = listBoxHistory.GetItemText(listBoxHistory.SelectedItem);
+                HistoryManager.deleteHistoryItem(selectedHistory);
+                listBoxHistory.Items.RemoveAt(listBoxHistory.SelectedIndex);
 
             }
         }
