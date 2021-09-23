@@ -24,9 +24,16 @@ namespace WebBrowser.UI
             var items = HistoryManager.GetHistoryItems();
             listBoxHistory.Items.Clear();
 
-            foreach (var item in items)
+            try
             {
-                listBoxHistory.Items.Add(string.Format("[{0}] {1} ({2})", item.Date, item.Title, item.URL)); 
+
+                foreach (var item in items)
+                {
+                    listBoxHistory.Items.Add(string.Format("[{0}] {1} ({2})", item.Date, item.Title, item.URL));
+                }
+            } catch
+            {
+                MessageBox.Show("No Current History");
             }
                       
         }
