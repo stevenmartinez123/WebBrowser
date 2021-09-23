@@ -33,5 +33,21 @@ namespace WebBrowser.Logic
             return results; 
         }
 
+        public static void DeleteBookmark(string bookmark)
+        {
+            var adapter = new BookmarksTableAdapter();
+            var rows = adapter.GetData();
+
+            foreach(var row in rows)
+            {
+                string match = string.Format(string.Format("{0} ({1})", row.Title, row.URL));
+
+                if (bookmark == match)
+                {
+                    adapter.Delete(row.Id, row.URL, row.Title);
+                }
+            }
+        }
+
     }
 }

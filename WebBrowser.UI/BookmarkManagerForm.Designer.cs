@@ -66,7 +66,7 @@ namespace WebBrowser.UI
             // DeleteButton
             // 
             this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.Location = new System.Drawing.Point(859, 75);
+            this.DeleteButton.Location = new System.Drawing.Point(849, 75);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(209, 88);
             this.DeleteButton.TabIndex = 3;
