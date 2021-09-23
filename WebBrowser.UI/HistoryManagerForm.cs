@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebBrowser.Logic;
 
+
 namespace WebBrowser.UI
 {
     public partial class HistoryManagerForm : Form
@@ -28,6 +29,25 @@ namespace WebBrowser.UI
                 listBoxHistory.Items.Add(string.Format("[{0}] {1} ({2})", item.Date, item.Title, item.URL)); 
             }
                       
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string text = searchTermTextBox.Text.Equals("") ? null : searchTermTextBox.Text.Trim(); 
+
+            if(text != null)
+            {
+                var items = HistoryManager.GetHistoryItems();
+                listBoxHistory.Items.Clear();
+                
+               foreach (var item in items)
+                {
+                    if (item.URL.Contains(text) || item.Title.Contains(text))
+                    {
+                        listBoxHistory.Items.Add(string.Format("[{0}] {1} ({2})", item.Date, item.Title, item.URL));
+                    } 
+                }
+            }
         }
     }
 }
