@@ -55,7 +55,7 @@ namespace WebBrowser.UI
             if (listBoxHistory.SelectedIndex >= 0)
             {
                 string selectedHistory = listBoxHistory.GetItemText(listBoxHistory.SelectedItem);
-                HistoryManager.deleteHistoryItem(selectedHistory);
+                HistoryManager.DeleteHistoryItem(selectedHistory);
                 listBoxHistory.Items.RemoveAt(listBoxHistory.SelectedIndex);
 
             }
@@ -63,7 +63,7 @@ namespace WebBrowser.UI
 
         private void buttonClearHistory_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

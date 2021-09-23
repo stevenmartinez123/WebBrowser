@@ -36,7 +36,7 @@ namespace WebBrowser.Logic
             return results;
         }
 
-        public static void deleteHistoryItem(string item)
+        public static void DeleteHistoryItem(string item)
         {
             var adapter = new HistoryTableAdapter();
             var rows = adapter.GetData();
@@ -49,6 +49,18 @@ namespace WebBrowser.Logic
                 {
                     adapter.Delete(row.Id, row.URL, row.Title, row.Date);
                 }
+            }
+        }
+
+
+        public static void DeleteHistory()
+        {
+            var adapter = new HistoryTableAdapter();
+            var rows = adapter.GetData();
+
+            foreach(var row in rows)
+            {
+                adapter.Delete(row.Id, row.URL, row.Title, row.Date);
             }
         }
 
