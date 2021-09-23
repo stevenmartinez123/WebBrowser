@@ -63,7 +63,8 @@ namespace WebBrowser.UI
 
         private void buttonClearHistory_Click(object sender, EventArgs e)
         {
-            
+            HistoryManager.DeleteHistory();
+            listBoxHistory.Items.Clear();
         }
     }
 }
