@@ -11,9 +11,9 @@ using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
-    public partial class Form1 : Form
+    public partial class BrowserForm : Form
     {
-        public Form1()
+        public BrowserForm()
         {
             InitializeComponent();
         }
@@ -97,6 +97,11 @@ namespace WebBrowser.UI
         private void userControlTabs1_MouseHover(object sender, EventArgs e)
         {
 
+        }
+
+        private void clearHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistoryManager.DeleteHistory();
         }
     }
 }
