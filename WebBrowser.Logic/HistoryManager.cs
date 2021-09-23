@@ -36,7 +36,26 @@ namespace WebBrowser.Logic
             return results;
         }
 
+        public static void deleteHistoryItem(string item)
+        {
+            var adapter = new HistoryTableAdapter();
+            var rows = adapter.GetData();
+
+            foreach (var row in rows)
+            {
+                string match = string.Format(string.Format("[{0}] {1} ({2})", row.Date, row.Title, row.URL));
+
+                if (item == match)
+                {
+                    adapter.Delete(row.Id, row.URL, row.Title, row.Date);
+                }
+            }
         }
+
+        }
+
+
+    
 
     }
 

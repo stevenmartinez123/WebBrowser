@@ -49,5 +49,14 @@ namespace WebBrowser.UI
                 }
             }
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (listBoxHistory.SelectedIndex >= 0)
+            {
+                string selectedHistory = listBoxHistory.GetItemText(listBoxHistory.SelectedItem);
+
+            }
+        }
     }
 }
