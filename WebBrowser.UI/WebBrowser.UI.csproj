@@ -149,15 +149,6 @@
     <None Include="Resources\Close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BrowserDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BrowserDatabase_log.ldf">
-      <DependentUpon>BrowserDatabase.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>

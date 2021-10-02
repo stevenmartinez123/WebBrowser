@@ -29,6 +29,7 @@ namespace WebBrowser.UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowserForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +45,8 @@ namespace WebBrowser.UI
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.userControlTabs1 = new WebBrowser.UI.UserControlTabs();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -60,7 +63,7 @@ namespace WebBrowser.UI
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1753, 56);
+            this.menuStrip1.Size = new System.Drawing.Size(1753, 61);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,7 +76,7 @@ namespace WebBrowser.UI
             this.printPageToolStripMenuItem,
             this.exitWebBrowserToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(121, 52);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(121, 57);
             this.fileToolStripMenuItem.Text = "&File: ";
             // 
             // newTabToolStripMenuItem
@@ -93,14 +96,16 @@ namespace WebBrowser.UI
             // savePageAsHTMLToolStripMenuItem
             // 
             this.savePageAsHTMLToolStripMenuItem.Name = "savePageAsHTMLToolStripMenuItem";
-            this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(533, 66);
+            this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(538, 66);
             this.savePageAsHTMLToolStripMenuItem.Text = "Save Page as HTML:";
+            this.savePageAsHTMLToolStripMenuItem.Click += new System.EventHandler(this.savePageAsHTMLToolStripMenuItem_Click);
             // 
             // printPageToolStripMenuItem
             // 
             this.printPageToolStripMenuItem.Name = "printPageToolStripMenuItem";
             this.printPageToolStripMenuItem.Size = new System.Drawing.Size(533, 66);
             this.printPageToolStripMenuItem.Text = "Print Page:";
+            this.printPageToolStripMenuItem.Click += new System.EventHandler(this.printPageToolStripMenuItem_Click);
             // 
             // exitWebBrowserToolStripMenuItem
             // 
@@ -116,7 +121,7 @@ namespace WebBrowser.UI
             this.manageBookmarksToolStripMenuItem,
             this.clearHistoryToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(129, 52);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(129, 60);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // manageHistoryToolStripMenuItem
@@ -145,7 +150,7 @@ namespace WebBrowser.UI
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(131, 52);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(131, 60);
             this.helpToolStripMenuItem.Text = "&Help:";
             // 
             // aboutToolStripMenuItem
@@ -159,10 +164,10 @@ namespace WebBrowser.UI
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 56);
+            this.tabControl1.Location = new System.Drawing.Point(0, 61);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1753, 685);
+            this.tabControl1.Size = new System.Drawing.Size(1753, 680);
             this.tabControl1.TabIndex = 2;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
@@ -175,10 +180,25 @@ namespace WebBrowser.UI
             this.tabPage1.Location = new System.Drawing.Point(12, 58);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1729, 615);
+            this.tabPage1.Size = new System.Drawing.Size(1729, 610);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // userControlTabs1
             // 
@@ -186,7 +206,7 @@ namespace WebBrowser.UI
             this.userControlTabs1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControlTabs1.Location = new System.Drawing.Point(3, 3);
             this.userControlTabs1.Name = "userControlTabs1";
-            this.userControlTabs1.Size = new System.Drawing.Size(1723, 609);
+            this.userControlTabs1.Size = new System.Drawing.Size(1723, 604);
             this.userControlTabs1.TabIndex = 0;
             this.userControlTabs1.MouseHover += new System.EventHandler(this.userControlTabs1_MouseHover);
             this.userControlTabs1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.userControlTabs1_MouseMove);
@@ -201,7 +221,7 @@ namespace WebBrowser.UI
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "BrowserForm";
-            this.Text = "Browser";
+            this.Text = "MNML";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -231,6 +251,8 @@ namespace WebBrowser.UI
         private System.Windows.Forms.TabPage tabPage1;
         private UserControlTabs userControlTabs1;
         private System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
 

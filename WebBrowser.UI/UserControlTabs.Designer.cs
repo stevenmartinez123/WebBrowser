@@ -103,6 +103,7 @@ namespace WebBrowser.UI
             this.toolStripHomeButton.Name = "toolStripHomeButton";
             this.toolStripHomeButton.Size = new System.Drawing.Size(69, 52);
             this.toolStripHomeButton.Text = "Home";
+            this.toolStripHomeButton.Click += new System.EventHandler(this.toolStripHomeButton_Click);
             // 
             // toolStripBookMarkButton
             // 

@@ -169,5 +169,10 @@ namespace WebBrowser.UI
             
             toolStripStatusLabel1.Text = AddressBarTextBox.Text; 
         }
+
+        private void toolStripHomeButton_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate("google.com");
+        }
     }
 }
